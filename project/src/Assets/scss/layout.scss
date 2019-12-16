@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+    font-family: 'Lato', sans-serif; 
+    height: 8000px;
+}
+.mainWrapper {
+  background: white;
+  width: 100%;
+  z-index: 2;
+  height: auto;
+position: relative;
+ margin-top: -12vh;
+ color: white;
+ background: blue;
+ color: black;
+}
+.firstSection {
+max-width: 1080px;
+width: 100%;
+margin: 0 auto;
+height: 500px;
+
+}
