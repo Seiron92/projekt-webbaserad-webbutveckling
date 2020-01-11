@@ -45,25 +45,18 @@ function sassTask() {
 
     // TASK : Minify images and copy from src to pub
 
-function imgsPath() {
-    return src(files.imgPath)
-      //  .pipe(imagemin())
-        .pipe(dest('src/Assets/images')
-        );
-}
-
 
 // TASK : watcher
 function watchTask() {
 
-    watch([files.jsPath, files.SCSS_DEST, files.imgPath],
-        parallel(jsTask,sassTask, imgsPath),
+    watch([files.jsPath, files.SCSS_DEST],
+        parallel(jsTask,sassTask),
 
     );
 }
 
 exports.default = series(
-    parallel(jsTask, sassTask, imgsPath),
+    parallel(jsTask, sassTask),
     watchTask
 
 );

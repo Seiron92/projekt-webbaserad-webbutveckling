@@ -5,10 +5,11 @@ import $ from 'jquery';
 function FirstSection() {
   return (
     <div className="mainWrapper">
-      <FirstSectionImage />
+  
       <div className="firstSection">
         <FirstSectionElement />
       </div>
+      <FirstSectionImage />
     </div>
   );
 }
@@ -54,14 +55,16 @@ class FirstSectionElement extends React.Component {
       return (
        
      <div>
-        <div className="firstText" data-scroll-speed="0">
-         
+       <div className="firstSection">
+        <div className="firstText">
+         <h1>Om oss</h1>
             <p>Löksås ipsum tid sorgliga hans samma annat lax tre det, 
             helt trevnadens brunsås där ta fram enligt nu, om ingalunda blivit både stig bäckasiner stig 
-            omfångsrik. Lax trevnadens när rännil faktor redan samtidigt olika när ännu, se stora det 
+            omfångsrik. Lax trevnadens när rännil faktor redan samtidigt olika när ännu, se stora det <br></br><br></br>
             kunde jäst sorgliga oss lax, hans kan kunde inom blev jäst från kanske. Hela dag björnbär 
             helt ta kunde att sitt sin tre, sitt träutensilierna för bra gör tiden är ordningens det, 
             trevnadens tre kom från se sin faktor verkligen.</p>
+            </div>
             </div>
             </div>
       );
@@ -69,7 +72,7 @@ class FirstSectionElement extends React.Component {
 
   }
   
-  
+ 
 
 class FirstSectionImage extends React.Component {
   constructor(props) {
@@ -109,10 +112,19 @@ class FirstSectionImage extends React.Component {
 
   render() {
     return (
-     
-   <div>
-             <img src={require('../../images/food.png')} id="sallad" data-scroll-speed="-2" alt="sallad"/>
-          </div>
+      <div>
+
+         <div id="mainLogo">
+           <h1>Välkommen</h1>
+           <h2>Löksås ipsum tid sorgliga hans samma annat lax tre det, 
+            helt trevnadens brunsås där ta fram enligt nu, om ingalunda blivit både stig bäckasiner stig 
+            omfångsrik. Lax trevnadens när rännil faktor redan samtidigt olika när ännu, se stora det </h2>
+           </div>
+
+   <div id="boka">
+             <img id="mat" src={require('../../images/kitchenGold.png')}  alt="sallad"/>
+        </div>
+  </div>
     );
   }
 

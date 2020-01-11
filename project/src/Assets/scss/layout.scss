@@ -1,29 +1,410 @@
-* {
-    margin: 0;
-    padding: 0;
+/* COLORS */
+$colors: (
+  // DEKLARERA FLERA FÄRGER
+    menu: #11151f,
+  font: #54728c,
+  golden: #c3a273,
+  accent: #e0c094,
+  light-parts: #171c28,
+  dark-parts: #0c0f16,
+  font-light: lighten(#123859, 40%),
+  golden-dark: darken(#c3a273, 15%)
+);
+@function color($color-name) {
+  @return map-get($colors, $color-name);
 }
-*, *::before, *::after {
+
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
-body {
-    font-family: 'Lato', sans-serif; 
-    height: 8000px;
-}
-.mainWrapper {
-  background: white;
-  width: 100%;
-  z-index: 2;
-  height: auto;
-position: relative;
- margin-top: -12vh;
- color: white;
- background: blue;
- color: black;
-}
-.firstSection {
-max-width: 1080px;
-width: 100%;
-margin: 0 auto;
-height: 500px;
+
+html, body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+height: 100%;
 
 }
+h1 {
+
+  font-size: 3.5em;
+  color: color(golden)
+}
+h2 {
+  font-size: 1.2em;
+
+}
+p {
+  color: color(golden);
+  font-size: 1em;
+}
+label {
+  font-family: "Lato", sans-serif;
+  padding: 10px;
+  color: color(golden);
+}
+input {
+  font-family: "Lato", sans-serif;
+  margin-top: 20px;
+  border: 1px solid color(accent);
+  outline: none;
+  font-size: 1em;
+}
+button {
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  padding: 2px 0 2px 0;
+  margin-top: 20px;
+  font-size: 1em;
+  min-width: 150px;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  transition: ease-in-out 1s;
+  background-image: linear-gradient(color(accent), color(golden));
+  &:hover {
+    background-image: linear-gradient(color(golden), color(golden-dark));
+    transition: ease-in-out 1s;
+  }
+}
+textarea {
+  font-family: "Lato", sans-serif;
+  margin-top: 20px;
+  border: 1px solid color(accent);
+  outline: none;
+  font-size: 1em;
+  min-height: 100px;
+}
+
+.mainWrapper {
+  width: 100%;
+  z-index: 3;
+  height: auto;
+
+  color: white;
+  width: 100%;
+height: auto;
+  margin-left: 0;
+  position: relative;
+  background: white;
+  
+}
+
+.mainWrapper2 {
+  width: 100%;
+  z-index: 4;
+  height: auto;
+  color: white;
+  width: 100%;
+background: white;
+  margin-left: 0;
+  position: relative;
+  margin-top: 50px;
+}
+
+
+.mainWrapper3 {
+  width: 100%;
+  z-index: 4;
+  height: auto;
+  color: white;
+  width: 100%;
+  margin-left: 0;
+  position: relative;
+  padding-top: 170px;
+}
+.mainWrapper4 {
+  width: 100%;
+  z-index: 3;
+  height:auto;
+  color: white;
+  width: 100%;
+
+
+
+  margin-left: 0;
+  position: relative;
+}
+.firstSection {
+  width: 100%;
+  background: #fff;
+  margin: 0 auto;
+  height: 600px;
+  z-index: 3;
+  position: relative;
+  h1 {
+    width: 45%;
+    margin-right: 7%;
+    float: right;
+    color: color(golden);
+    margin-top: 70px;
+  }
+  p {
+    width: 35%;
+    margin-right: 17%;
+    float: right;
+    color: color(golden);
+  }
+}
+// BOKA BORD
+.secondSection {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom:100px;
+  position: relative;
+  background: color(menu);
+
+  svg {
+    max-width: 80%;
+    margin: 10vh 10%;
+
+  }
+  #hmm {
+    display: none;
+  }
+  #conti {
+    display: none;
+
+      font-family: "Lato", sans-serif;
+      cursor: pointer;
+      padding: 2px 0 2px 0;
+
+      font-size: 1em;
+text-align: center;
+      max-width: 100px;
+      margin: 20px auto;
+      margin-left: 20px;
+      border: none;
+      outline: none;
+      color: white;
+      transition: ease-in-out 1s;
+      background-image: linear-gradient(color(accent), color(golden));
+      &:hover {
+        background-image: linear-gradient(color(golden), color(golden-dark));
+        transition: ease-in-out 1s;
+      
+    }
+  }
+  #submit {
+    display: none;
+  }
+  #bookings {
+    margin: 5vh 32%;
+    position: relative;
+width: auto;
+
+  }
+  #rebook {
+    margin: 10vh auto;
+  }
+  h2 {
+    font-size: 2.2em;
+    width: 90%;
+text-align: center;
+    color: color(golden);
+  }
+}
+#mat {
+
+  width: 25%;
+  height: auto;
+  left: 0;
+  margin-left: 10%;
+  position: relative;
+  margin-top: -55vh;
+  z-index: 4;
+}
+
+
+.booking {
+  width: 35%;
+  background: white;
+  height: auto;
+  float: right;
+  padding: 25px;
+right: 0;
+margin-top: 50px;
+margin-right: 15%;
+
+position: absolute;
+z-index: 4;
+  .secondText {
+    width: 100%;
+    border-radius: 5px;
+
+    border: 2px solid color(golden);
+    padding: 25px;
+    z-index: 6;
+    h2 {
+      font-size: 1.9em;
+      width: 90%;
+      margin: 0;
+      color: color(golden);
+    }
+    p {
+      width: 90%;
+      margin: 0;
+    }
+  }
+}
+
+.thirdSection {
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  margin-top: -100px;
+
+  h2 {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 2.2em;
+    color: color(golden);
+  }
+  h3 {
+    text-align: center;
+    padding-top: 30px;
+    color: color(golden);
+    font-size: 1.9em;
+  }
+  .part {
+    width: 30%;
+    display: inline-block;
+  }
+  #part1 {
+    background: color(light-parts);
+    padding: 20px 0 20px 20px;
+    z-index: 1;
+  }
+  #part2 {
+    background: color(dark-parts);
+    padding: 40px 20px 40px 20px;
+    z-index: 2;
+  }
+  #part3 {
+    background: color(light-parts);
+    padding: 20px 20px 20px 0px;
+    z-index: 1;
+  }
+  #frame {
+    border-radius: 5px;
+    border-left: 2px solid color(golden);
+    border-top: 2px solid color(golden);
+    border-bottom: 2px solid color(golden);
+    min-height: 700px;
+  }
+  #frame2 {
+    border-radius: 5px;
+    padding: 40px 20px 40px 20px;
+    border: 2px solid color(golden);
+    min-height: 700px;
+  }
+  #frame3 {
+    border-radius: 5px;
+    border-right: 2px solid color(golden);
+    border-top: 2px solid color(golden);
+    border-bottom: 2px solid color(golden);
+    min-height: 700px;
+  }
+  .item {
+    width: 80%;
+    display: inline-block;
+    text-align: left;
+    font-style: italic;
+    p {
+      padding-top: 20px;
+      border-bottom: 2px dotted white;
+    }
+  }
+  .price {
+    width: 15%;
+    display: inline-block;
+    vertical-align: bottom;
+    color: color(accent);
+    p {
+      padding-top: 20px;
+    }
+  }
+  #dining1 {
+    width: 20%;
+  }
+  #dining2 {
+    width: 20%;
+    padding: 10%;
+  }
+  #dining3 {
+    width: 20%;
+  }
+}
+.fourthSection {
+  width: 100%;
+  text-align: center;
+  background: color(white);
+  color: color(golden);
+  margin: 0;
+  padding: 0;
+  z-index: 70;
+  position: relative;
+  padding-top: 50px;
+  #platting {
+    width: 50%;
+    height: auto;
+    left: 0;
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+  }
+  #kontakt {
+    width: 50%;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+
+    padding-bottom: 0;
+
+    p {
+      width: 80%;
+      text-align: left;
+      margin: 0 auto;
+      color: color(golden);
+    }
+    h2 {
+      font-size: 2em;
+      color: color(golden);
+    }
+    #cnt {
+      border: 1px solid color(golden);
+      border-radius: 5px;
+      width: 75%;
+      margin: 40px auto;
+      padding: 20px 0 20px 0;
+      input {
+        width: 75%;
+        padding: 3px;
+      }
+      textarea {
+        width: 75%;
+      }
+    }
+  }
+}
+
+
+footer {
+  background: color(dark-parts);
+
+  z-index: 200;
+position: relative;
+bottom:0;
+  width: 100%;
+  height: 50%;
+}
+
+

@@ -82,18 +82,18 @@ const Navigation = () => {
     <div className="navigation">
       <ul className="navigation__list">
         <li className="navigation__item"><a href="">Hem</a></li>
-        <li className="navigation__item"><a href="">Menu</a></li>
-        <li className="navigation__item"><a href="">Boka bord</a></li>
-        <li className="navigation__item"><a href="">Kontakt</a></li>
+        <li className="navigation__item"><a href="#menu">Menu</a></li>
+        <li className="navigation__item"><a href="#bokaBord">Boka bord</a></li>
+        <li className="navigation__item"><a href="#kontakt">Kontakt</a></li>
       </ul>
     </div>
   )
 }
 const Logo = () => {
   return (
-
-    <img src="#" alt="logo"></img>
-
+    <div id="logo">
+<a href="#"><img src={require('../../images/logo.png')} alt="Logotyp"></img></a>
+</div>
   )
 }
 

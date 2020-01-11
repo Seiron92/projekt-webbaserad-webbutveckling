@@ -8,11 +8,14 @@ function Header() {
       </div>
     );
   }
+
+  
   const Background = () => {
     return (
-      <video autoPlay loop muted>
-  <source src="videos/steak.mp4" type="video/mp4"/>
-  </video>
+<div id="headerImage" className="zoom">
+<img id="test" src={require('../../images/newHeader.jpg')} alt="Header"></img>
+</div>
+
   )
   }
   
