@@ -7,6 +7,8 @@
     "@testing-library/react": "^9.3.3",
     "@testing-library/user-event": "^7.1.2",
     "aos": "^2.3.4",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^6.2.0",
@@ -15,6 +17,8 @@
     "gulp-uglify-es": "^2.0.0",
     "gulp-watch": "^5.0.1",
     "jquery": "^3.4.1",
+    "mongoose": "^5.8.7",
+    "nodemailer": "^6.4.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-image-zoom": "^1.1.0",
@@ -27,7 +31,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "server": "nodemon app.js"
   },
   "eslintConfig": {
     "extends": "react-app"

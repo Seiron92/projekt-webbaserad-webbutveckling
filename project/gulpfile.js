@@ -20,7 +20,7 @@ const files = {
    SCSS_DEST:  "src/Assets/",
     imgPath: "src/Assets/images/**"
 };
-
+/*
 function jsTask() {
     return src(files.jsPath)
         .pipe(uglify())
@@ -32,10 +32,11 @@ function jsTask() {
 
         );
 }
+*/
 // TASK : Compile SASS and compress
 function sassTask() {
     return src(files.SCSS_SRC)
-    .pipe(sourcemaps.init())
+  //  .pipe(sourcemaps.init())
     .pipe(concat("scss/main.scss"))
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
    // .pipe(sourcemaps.write('.maps'))
@@ -49,14 +50,14 @@ function sassTask() {
 // TASK : watcher
 function watchTask() {
 
-    watch([files.jsPath, files.SCSS_DEST],
-        parallel(jsTask,sassTask),
+    watch([files.SCSS_DEST],
+        parallel(sassTask)
 
     );
 }
 
 exports.default = series(
-    parallel(jsTask, sassTask),
+    parallel(sassTask),
     watchTask
 
 );

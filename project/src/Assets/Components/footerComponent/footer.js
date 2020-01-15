@@ -15,45 +15,36 @@ class FooterElement extends React.Component {
     super(props);
   }
   componentDidMount() {
-      AOS.init({
-          duration : 2000
-        })
-      $.fn.moveIt = function(){
-          var $window = $(window);
-          var instances = [];
-          
-          $(this).each(function(){
-            instances.push(new moveItItem($(this)));
-          });
-          
-          window.addEventListener('scroll', function(){
-            var scrollTop = $window.scrollTop();
-            instances.forEach(function(inst){
-              inst.update(scrollTop);
-            });
-          }, {passive: true});
-        }
-        
-        var moveItItem = function(el){
-          this.el = $(el);
-          this.speed = parseInt(this.el.attr('data-scroll-speed'));
-        };
-        
-        moveItItem.prototype.update = function(scrollTop){
-          this.el.css('transform', 'translateY(' + -(scrollTop / this.speed) + 'px)');
-        };
-        
-        // Initialization
-        $(function(){
-          $('[data-scroll-speed]').moveIt();
-        });
+  
   }
 
   render() {
     return (
       <div>
         <footer>
-<h2>Fooooot</h2>
+<div id="footerContainer">
+  <div className="foot">
+  <a href="#"><img src={require('../../images/logo.png')} alt="Logotyp"></img></a>
+  </div>
+  <div className="foot">
+<h2>Hitta till oss</h2>
+<ul>
+<li>Storgatan 23</li>
+<li>33 330 Storstaden</li>
+<li><i className="fas fa-phone"></i> 0777-12345</li>
+</ul>
+  </div>
+  <div className="foot">
+<h2>Öppettider</h2>
+<ul>
+<li>Måndag-Söndag: 14:00 - 00:00 </li>
+
+</ul>
+  </div>
+  <div id="bottomFoot">
+  <p>	© Rebecca Seiron &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;A <a href="https://webuals.com/">Webuals</a> production</p>
+  </div>
+</div>
 </footer>
 </div>
     )}}

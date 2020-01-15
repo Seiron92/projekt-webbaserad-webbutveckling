@@ -62,6 +62,12 @@ class Button extends React.Component {
     const nav = document.querySelector('.navigation');
     hamburger.classList.toggle('hamburger--active');
     nav.classList.toggle('navigation--active');
+    var test = document.querySelector('.navigation--active');
+
+    $(test).on('click',test,function(){
+      hamburger.classList.remove('hamburger--active');
+      nav.classList.remove('navigation--active');
+  });
   }
 
   render() {
@@ -81,9 +87,10 @@ const Navigation = () => {
   return (
     <div className="navigation">
       <ul className="navigation__list">
-        <li className="navigation__item"><a href="">Hem</a></li>
+        <li className="navigation__item"><a href="#about">Om oss</a></li>
         <li className="navigation__item"><a href="#menu">Menu</a></li>
-        <li className="navigation__item"><a href="#bokaBord">Boka bord</a></li>
+        <li className="navigation__item "><a id="bokbord" href="#scrollTo">Boka bord</a></li>
+        <li className="navigation__item "><p id="dinaBokningar">Dina bokningar</p></li>
         <li className="navigation__item"><a href="#kontakt">Kontakt</a></li>
       </ul>
     </div>

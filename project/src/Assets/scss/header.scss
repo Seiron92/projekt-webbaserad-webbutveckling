@@ -9,7 +9,7 @@ $colors: (
   font-dark: darken(#123859, 2%)
 );
 /* MEDIA QUERIES */
-$small: 1100px;
+$small: 1200px;
 $xsmall: 550px;
 $dark: #171717;
 $light: #FFFFFF;
@@ -82,24 +82,46 @@ height: 90px;
  transition: ease-in-out 0.5s;
  padding-bottom: 10px;
  border-bottom: 1px solid white;
+ width: 100%;
 
+}
+#dinaBokningar {
+  display: inline-block;
+  color: color(golden);
+  font-size: 1.1em;
+  cursor: pointer;
+  &:hover {
+    color: color(accent); 
+    transition: ease-in-out 0.3s;
+
+   }
 }
 #header {
 
-  max-width: 1080px;
+  max-width: 1280px;
   width: 100%;
   margin: -30px auto;
   left: 0;
 right: 0;
+
 
 ul {
   display: inline-block;
   right: 0;
   margin-top: -35px;
   float: right;
+  @include small() {
+    margin-top: 30px;
+    display: block;
+
+    }
   li{
     display: inline-block;
     padding-right: 30px;
+    @include small() {
+
+      display: block;
+      }
 
     a{
       display: inline-block;
@@ -115,7 +137,7 @@ ul {
 }
 #logo {
   display: inline-block;
-  left: 0;
+  margin-left: 20px;
 
 }
 }
@@ -129,7 +151,9 @@ ul {
     cursor: pointer;
     background-color: transparent;
     border: 0;
-    margin: 0;
+margin-top: 50px;
+right: 10%;
+float: right;
   }
   
   .hamburger, .navigation {
@@ -187,13 +211,16 @@ ul {
   }
   
   .navigation {
-    height: 100vh;
-    width: 250px;
+    height: 101vh;
+    width: 200px;
     background-color: $light;
     position: absolute;
-    top: 0;
+top: 0;
     left: 0;
     transform: translateX(-250px);
+    @include small() {
+    
+    }
   }
   
   .navigation--active {
@@ -217,8 +244,12 @@ ul {
 #mainLogo {
   position: absolute;
 text-align: center;
-top: -95vh;
+top: 30vh;
 z-index:2;
   width: 40%;
   margin-left: 6%;
+  color: white;
+  @include small {
+    width: 80%;
+  }
 }

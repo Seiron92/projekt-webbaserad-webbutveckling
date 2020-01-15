@@ -22,9 +22,10 @@ class ThirdSectionElement extends React.Component {
       super(props);
     }
     componentDidMount() {
-        AOS.init({
-            duration : 2000
-          })
+     
+    AOS.init({
+      duration: 3000
+    }) 
         $.fn.moveIt = function(){
             var $window = $(window);
             var instances = [];
@@ -70,13 +71,9 @@ class ThirdSectionElement extends React.Component {
                      <p>Halstrad färsk anklever med mandelkräm, picklade lingon, brioche samt rostad anksås med lingon</p>
                      <p>Råbiff på svenskt nötkött med picklad gulbeta, Västervikssenapskräm, rostade macadamianötter samt friterat vaktelägg</p>
                      <p>Rostad jordärtskockssoppa med kräm på Svedjans ost, bakad jordärtskocka samt hösttryffel</p>
+                
                  </div>
-                 <div className="price"><p>129kr</p><br></br>
-                 <p>149kr</p><br></br>
-                 <p>135kr</p><br></br>
-                 <p>149kr</p><br></br>
-                 <p>149kr</p><br></br>
-                 </div>
+  
               </div>
           </div>
           <div className="part" id="part2">   <div id="frame2">
@@ -89,14 +86,6 @@ class ThirdSectionElement extends React.Component {
                      <p>Pumpa och hasselnötsfylld ravioli med rostad kålkräm, endive, picklad pumpa samt smörad äppelsås</p>
                      <p>Stekt rådjurssadel med rotsellerikräm, svamp från Hällestad, saltbakad rotselleri samt viltsås</p>
                  </div>
-                 <div className="price"><p>289kr</p><br></br>
-                 <p>309kr</p><br></br>
-                 <p>389kr</p><br></br>
-                 <p>319kr</p><br></br>
-                 <p>289kr</p><br></br>
-                 <p>289kr</p><br></br>
-                 </div>
-             
           </div></div>
           
           <div className="part" id="part3">   <div id="frame3">
@@ -109,13 +98,6 @@ class ThirdSectionElement extends React.Component {
                      <p>Yoghurtmousse med citronglass, rostad maräng samt citruste med fänkål</p>
                      <p>Bakad Carameliachoklad med pistage, saltkaramellmousse, honungskrisp samt färskostglass</p>
                    
-                 </div>
-                 <div className="price"><p>189kr</p><br></br>
-                 <p>169kr</p><br></br>
-                 <p>189kr</p><br></br>
-                 <p>219kr</p><br></br>
-                 <p>169kr</p><br></br>
-                 <p>189kr</p><br></br>
                  </div>
               </div></div>
              
