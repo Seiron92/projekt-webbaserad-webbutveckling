@@ -37,10 +37,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // CREATE STATIC PATH
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // SERVE STATIC ASSETS IF IN PRODUCTION
-//if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'production'){
     //SET STATIC FOLDER
 
     app.use(express.static('project/build'));
@@ -48,7 +48,7 @@ app.use(bodyParser.json())
     app.get('*', (req, res) =>{
         res.sendFile(path.resolve(__dirname, 'project','build', 'index.html'))
     })
-//}
+}
 
 
 // REST-API, SEND ALL BOOKINGS
