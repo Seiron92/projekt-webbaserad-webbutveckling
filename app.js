@@ -15,20 +15,6 @@ const mongoose = require("mongoose");
 // CONNECT TO DB
 mongoose.connect("mongodb+srv://rebecca:sockersweet92@cluster0-knlvj.azure.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true } );
 
-const db = process.env.MONGODB_URL;
-
-const connectDB = async () => {
-  try {
-    await mongoose.connect(db, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true
-    });
-    console.log("MongoDB is Connected...");
-  } catch (err) {
-    console.error(err.message);
-    process.exit(1);
-  }
-};
 
 const Bookings = require("./app/models/bookingService.js");
 // NEW INSTANCE OF EXPRESS 
@@ -57,10 +43,10 @@ app.use(bodyParser.json())
 if(process.env.NODE_ENV === 'production'){
     //SET STATIC FOLDER
 
-    app.use(express.static('client/build'));
+    app.use(express.static('project/build'));
 
     app.get('*', (req, res) =>{
-        res.sendFile(path.resolve(__dirname, 'client','build', 'index.html'))
+        res.sendFile(path.resolve(__dirname, 'project','build', 'index.html'))
     })
 }
 
