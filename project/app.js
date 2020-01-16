@@ -15,6 +15,21 @@ const mongoose = require("mongoose");
 // CONNECT TO DB
 mongoose.connect("mongodb+srv://rebecca:sockersweet92@cluster0-knlvj.azure.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true } );
 
+const db = process.env.MONGODB_URL;
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(db, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true
+    });
+    console.log("MongoDB is Connected...");
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+};
+
 const Bookings = require("./app/models/bookingService.js");
 // NEW INSTANCE OF EXPRESS 
 const app = express();
@@ -36,7 +51,18 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // CREATE STATIC PATH
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+
+// SERVE STATIC ASSETS IF IN PRODUCTION
+if(process.env.NODE_ENV === 'production'){
+    //SET STATIC FOLDER
+
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) =>{
+        res.sendFile(path.resolve(__dirname, 'client','build', 'index.html'))
+    })
+}
 
 
 // REST-API, SEND ALL BOOKINGS
