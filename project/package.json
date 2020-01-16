@@ -37,8 +37,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "gulp": "gulp",
-    "server": "nodemon app.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "server": "nodemon app.js"
   },
   "eslintConfig": {
     "extends": "react-app"
