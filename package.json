@@ -11,9 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp",
     "server": "nodemon app.js",
-  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix project && npm run build --prefix project",
-  "start": "node app.js"
-   },
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix project && npm run build --prefix project",
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Seiron92/projekt-webbaserad-webbutveckling.git"
@@ -32,5 +32,8 @@
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1"
   },
-  "homepage": "https://github.com/Seiron92/projekt-webbaserad-webbutveckling#readme"
+  "homepage": "https://github.com/Seiron92/projekt-webbaserad-webbutveckling#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
