@@ -12,7 +12,7 @@
     "gulp": "gulp",
     "server": "nodemon app.js",
   "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix project && npm run build --prefix project",
-  "start": "node server.js"
+  "start": "node app.js"
    },
   "repository": {
     "type": "git",
