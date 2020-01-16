@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp",
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix project && npm run build --project"
    },
   "repository": {
     "type": "git",

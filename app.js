@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // CREATE STATIC PATH
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // SERVE STATIC ASSETS IF IN PRODUCTION
 if(process.env.NODE_ENV === 'production'){
