@@ -2,6 +2,10 @@
   "name": "webbaserad-webbutveckling",
   "version": "1.0.0",
   "description": "webb-baserad webbutveckling",
+  "engines": {
+    "node": "12.13.1",
+    "npm": "6.12.1"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
