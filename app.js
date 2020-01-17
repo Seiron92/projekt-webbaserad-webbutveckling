@@ -153,8 +153,8 @@ app.put("/api/booking/update/:_id", function(req, res){
 
 
 //INITIATE PORT
-let port = 3001;
+let port = process.env.PORT || 3001;
 // START SERVER 
 app.listen(port, function(){
-console.log("Server started at port 3000")
+console.log("Server started at port 3001")
 })
