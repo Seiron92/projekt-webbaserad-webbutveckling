@@ -13,9 +13,10 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 // CONNECT TO DB
-mongoose.connect("mongodb+srv://rebecca:sockersweet92@cluster0-knlvj.azure.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true } );
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true } );
 
 
+//mongodb+srv://rebecca:sockersweet92@cluster0-knlvj.azure.mongodb.net/test?retryWrites=true&w=majority
 const Bookings = require("./app/models/bookingService.js");
 // NEW INSTANCE OF EXPRESS 
 const app = express();
@@ -27,6 +28,9 @@ app.all('/*', function (req, res, next){
     res.header("Access-Control-Allow-Methods", "GET, PUT, PATCH, POST, DELETE");
     next();
 });
+
+
+
 
 
 // BODY PARSER
