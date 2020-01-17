@@ -436,8 +436,8 @@ var newTable = document.getElementById("table2");
       submit.style.display = "block";
     }
     // CONNECT TO WEBSERVICE
-    const urlGet = "http://localhost:3000/api/booking";
-    const urlAdd = "http://localhost:3000/api/booking/add";
+    const urlGet = "http://localhost:3001/api/booking";
+    const urlAdd = "http://localhost:3001/api/booking/add";
     var hideThis = document.getElementById("hideThis");
     var form = document.getElementById("form");
 
@@ -502,7 +502,7 @@ var newTable = document.getElementById("table2");
         if (emailVerification.value != "") {
          
 
-                var urlGetByEmail = "http://localhost:3000/api/bookingByEmail/" + emailVerification.value;
+                var urlGetByEmail = "http://localhost:3001/api/bookingByEmail/" + emailVerification.value;
             
    
           fetch(urlGet)
@@ -550,7 +550,7 @@ conf.style.display = "block";
                       var currentID = clicked.id || "No ID!";
                       var s1 = currentID;
                       var s2 = s1.substr(3);
-                      const urlDelete = "http://localhost:3000/api/booking/delete/" + s2;
+                      const urlDelete = "http://localhost:3001/api/booking/delete/" + s2;
                       fetch(urlDelete, {
                         method: 'DELETE',
                         headers: {
@@ -581,7 +581,7 @@ conf.style.display = "block";
                       var currentID = clicked.id || "No ID!";
                       var s1 = currentID;
                       var s2 = s1.substr(3);
-                      const urlSet = "http://localhost:3000/api/booking/update/" + s2;
+                      const urlSet = "http://localhost:3001/api/booking/update/" + s2;
                       var update = document.getElementById("update");
                     date2.value = element.date;
                     time2.value = element.time;
