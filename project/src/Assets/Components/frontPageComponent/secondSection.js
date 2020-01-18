@@ -431,8 +431,8 @@ var newTable = document.getElementById("table2");
       submit.style.display = "block";
     }
     // CONNECT TO WEBSERVICE
-    const urlGet = "http://localhost:3001/api/booking";
-    const urlAdd = "http://localhost:3001/api/booking/add";
+    const urlGet = "https://guarded-castle-72495.herokuapp.com/api/bookings/api/booking";
+    const urlAdd = "https://guarded-castle-72495.herokuapp.com/api/bookings/api/booking/add";
     var hideThis = document.getElementById("hideThis");
     var form = document.getElementById("form");
 
@@ -497,11 +497,6 @@ var newTable = document.getElementById("table2");
 
       getBookings.onclick = function () {
         if (emailVerification.value != "") {
-         
-
-                var urlGetByEmail = "http://localhost:3001/api/bookingByEmail/" + emailVerification.value;
-            
-   
           fetch(urlGet)
             .then(
               function (response) {
@@ -535,10 +530,11 @@ conf.style.display = "block";
                     } }
                     // DELETE BOOKING
 
-                    $('.button3').click(function (event) {       
+                    $('.button3').click(function (event) {      
+                      event.preventDefault(); 
                       var answer = window.confirm("Är du säker på att du vill avboka?")
                     if (answer) {
-                      event.preventDefault();
+                   
                
                       var scrollTo = document.getElementById("scrollTo");
                       bokaBord.style.display ="none";
@@ -546,7 +542,7 @@ conf.style.display = "block";
                       var currentID = clicked.id || "No ID!";
                       var s1 = currentID;
                       var s2 = s1.substr(3);
-                      const urlDelete = "http://localhost:3001/api/booking/delete/" + s2;
+                      const urlDelete = "https://guarded-castle-72495.herokuapp.com/api/bookings/api/booking/delete/" + s2;
                       fetch(urlDelete, {
                         method: 'DELETE',
                         headers: {
@@ -566,7 +562,7 @@ hide.style.display = "none";
                 // Do nothing!
             }
               
-                    })
+                    }) 
                     /* CHANGE BOOKING */           
                     $('.button2').click(function (event) {
                       var bokno = document.getElementById("bokno");
@@ -580,7 +576,7 @@ hide.style.display = "none";
                       var currentID = clicked.id || "No ID!";
                       var s1 = currentID;
                       var s2 = s1.substr(3);
-                      const urlSet = "http://localhost:3001/api/booking/update/" + s2;
+                      const urlSet = "https://guarded-castle-72495.herokuapp.com/api/bookings/api/booking/update/" + s2;
                       var update = document.getElementById("update");
                     date2.value = element.date;
                     time2.value = element.time;
@@ -735,6 +731,7 @@ bokbord.onclick = function() {
   bokaBord.style.display= "block";
  
 }
+
  // AOS     
     AOS.init({
       duration: 3000
