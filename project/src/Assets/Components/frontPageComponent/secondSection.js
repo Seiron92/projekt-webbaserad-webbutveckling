@@ -512,8 +512,9 @@ var newTable = document.getElementById("table2");
                   console.log(response.status);
                   return;
                 }
-
+               
                 response.json().then(function (data) {
+              
 hide.style.display = "none";
 bokaBord.style.display = "none";
 conf.style.display = "block";
@@ -526,6 +527,7 @@ conf.style.display = "block";
                   data.forEach(element => {
             
                     if(element.email == emailVerification.value){
+                      if(element.date >=dateToday){
      
                      // console.log(user)
                     conf.innerHTML += ` <div class="block">
@@ -540,11 +542,16 @@ conf.style.display = "block";
    <div class="button" id="getBookings" >Hämta</div>
    </form>
                 </div>` ;
-                    } 
+                    } }
                     // DELETE BOOKING
 
                     $('.button3').click(function (event) {
                       event.preventDefault();
+                      var answer = window.confirm("Är du säker på att du vill avboka?")
+                      if (answer) {
+                        // Save it!
+                    
+                      var scrollTo = document.getElementById("scrollTo");
                       bokaBord.style.display ="none";
                       var clicked = event.target;
                       var currentID = clicked.id || "No ID!";
@@ -558,14 +565,17 @@ conf.style.display = "block";
                         },
                     }).then((res) => res.json())
                       // DISPLAY MESSAGE FOR CANCELED BOOKING
-
-                      hide.innerHTML = `
+                      scrollTo.scrollIntoView();
+hide.style.display = "none";
+                      conf.innerHTML = `
               <div id="bookings" data-aos="fade-right"> <div class="block">
 <h3>Din bokning är avbokad</h3>
               </div></div>
               `;
              
-                  
+                   } else {
+                // Do nothing!
+            }
               
                     })
                     /* CHANGE BOOKING */           

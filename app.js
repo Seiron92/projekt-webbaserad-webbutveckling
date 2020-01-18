@@ -12,11 +12,13 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
 
-// CONNECT TO DB
+// CONNECT TO DB VIA HEROKU
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true } );
 
+// ON LOCAL HOST 
+//mongoose.connect("mongodb+srv://rebecca:sockersweet92@cluster0-knlvj.azure.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true } );
 
-//mongodb+srv://rebecca:sockersweet92@cluster0-knlvj.azure.mongodb.net/test?retryWrites=true&w=majority
+
 const Bookings = require("./app/models/bookingService.js");
 // NEW INSTANCE OF EXPRESS 
 const app = express();
@@ -57,13 +59,16 @@ if(process.env.NODE_ENV === 'production'){
 
 // REST-API, SEND ALL BOOKINGS
 app.get("/api/booking", function(req, res){
-    Bookings.find(function(err, Bookings){
+  
+    Bookings.find(
+      
+        function(err, Bookings){
     if(err){
-    res.send(err);
+    res.send(err)
 }
 res.json(Bookings);
 
-});
+}).sort({date: 'asc'})
 });
 
 // REST-API, SEND BOOKINGS WITH SPECIFIC ID
