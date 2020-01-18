@@ -431,7 +431,7 @@ var newTable = document.getElementById("table2");
       submit.style.display = "block";
     }
     // CONNECT TO WEBSERVICE
-    const urlGet = "/api/booking";
+    const urlGet = "/../api/booking";
     const urlAdd = "/api/booking/add";
     var hideThis = document.getElementById("hideThis");
     var form = document.getElementById("form");
