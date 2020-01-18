@@ -87,6 +87,7 @@ class SecondSectionImage extends React.Component {
     var submit = document.getElementById("submit");
     var hide = document.getElementById("hide");
     var conf = document.getElementById("conf");
+    var conf2 = document.getElementById("conf2");
     var bokaBord = document.getElementById("bokaBord2");
 
     // UPDATE
@@ -459,8 +460,10 @@ var newTable = document.getElementById("table2");
       hideThis.style.display = "none";
       svg.style.display = "none";
       submit.style.display = "none";
+      conf2.style.display = "block";
+      conf.style.display = "block";
       bookings.style.display = "none";
-      bokaBord.innerHTML += `<div id="hide2">
+      conf2.innerHTML += `<div id="hide2">
 <h2>Tack för din bokning ${name.value}</h2>
 <div id="bookings2" data-aos="fade-right">
 <div className="block2">
@@ -468,7 +471,7 @@ var newTable = document.getElementById("table2");
          Bord: ${tab}
 </div></div>
 </div>`
-     bokaBord.innerHTML += `
+     conf2.innerHTML += `
 <form style="display:none">
 <input type="email" id="emailverification" placeholder="Ange din epostadress"></input>
 <div class="button" id="getBookings" >Hämta</div>
@@ -508,7 +511,7 @@ var newTable = document.getElementById("table2");
                 }
                
                 response.json().then(function (data) {
-hide.style.display = "none";
+//hide.style.display = "none";
 bokaBord.style.display = "none";
 conf.style.display = "block";
                  conf.innerHTML = ` <h2>Här är dina bokningar</h2>
@@ -764,6 +767,7 @@ bokbord.onclick = function() {
         <div data-aos="fade-right" id="hmm"><h2>Välj bord</h2></div>
         <div id="submit">Boka</div>
         </div>
+    
         <div id="hide">
           <h2>Dina bokningar</h2>
           <div id="bookings2" data-aos="fade-right">
@@ -772,6 +776,8 @@ bokbord.onclick = function() {
               <div className="button" id="getBookings" >Hämta</div>
             </form>
           </div>
+        </div>
+        <div id="conf2">
         </div>
         <div id="conf">
         </div>
