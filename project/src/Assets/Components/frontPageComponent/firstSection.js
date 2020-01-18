@@ -32,7 +32,6 @@ class FirstSectionElement extends React.Component {
        <div className="firstSection">
        <img data-aos="fade-right" id="mat" src={require('../../images/kitchenGold.png')}  alt="sallad"/>
         <div className="firstText">
-
          <h1 data-aos="fade-down">Om oss</h1>
             <p data-aos="fade-up">Löksås ipsum tid sorgliga hans samma annat lax tre det, 
             helt trevnadens brunsås där ta fram enligt nu, om ingalunda blivit både stig bäckasiner stig 
@@ -45,12 +44,5 @@ class FirstSectionElement extends React.Component {
             </div>
       );
     }
-
   }
-  
-
-
-
-
-
 export default FirstSection;

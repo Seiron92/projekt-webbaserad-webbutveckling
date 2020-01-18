@@ -9,29 +9,18 @@ import ThirdSection from './Assets/Components/frontPageComponent/thirdSection';
 import FourthSection from './Assets/Components/frontPageComponent/fourthSection';
 import Footer from './Assets/Components/footerComponent/footer';
 
-//import logo from './logo.svg';
-
-
-
 function App() {
   return (
     <div className="App">
-
-
-
 <Header />
 <Video />
 <FirstSection />
 <ThirdSection />
 <SecondSection />
-
 <FourthSection />
 <Footer />
-
-
     </div>
   );
 }
-
 
 export default App;
