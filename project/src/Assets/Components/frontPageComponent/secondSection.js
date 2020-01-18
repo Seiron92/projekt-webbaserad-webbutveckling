@@ -531,7 +531,7 @@ conf.style.display = "block";
                     // DELETE BOOKING
 
                     $('.button3').click(function (event) {      
-                      event.preventDefault(); 
+                         event.preventDefault(); 
                       var answer = window.confirm("Är du säker på att du vill avboka?")
                     if (answer) {
                    

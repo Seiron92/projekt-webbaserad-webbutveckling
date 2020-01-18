@@ -12,6 +12,8 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
 
+
+
 // CONNECT TO DB VIA HEROKU
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true } );
 
@@ -45,16 +47,6 @@ app.use(bodyParser.json())
 // CREATE STATIC PATH
 app.use(express.static(path.join(__dirname, 'public')));
 
-// SERVE STATIC ASSETS IF IN PRODUCTION
-if(process.env.NODE_ENV === 'production'){
-    //SET STATIC FOLDER
-
-    app.use(express.static('project/build'));
-
-    app.get('*', (req, res) =>{
-        res.sendFile(path.resolve(__dirname, 'project','build', 'index.html'))
-    })
-}
 
 
 // REST-API, SEND ALL BOOKINGS
@@ -157,6 +149,16 @@ app.put("/api/booking/update/:_id", function(req, res){
 })
 
 
+// SERVE STATIC ASSETS IF IN PRODUCTION
+if(process.env.NODE_ENV === 'production'){
+    //SET STATIC FOLDER
+
+    app.use(express.static('project/build'));
+
+    app.get('*', (req, res) =>{
+        res.sendFile(path.resolve(__dirname, 'project','build', 'index.html'));
+    })
+}
 //INITIATE PORT
 let port = process.env.PORT || 3001;
 // START SERVER 
