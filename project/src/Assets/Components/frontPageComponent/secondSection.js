@@ -431,8 +431,8 @@ var newTable = document.getElementById("table2");
       submit.style.display = "block";
     }
     // CONNECT TO WEBSERVICE
-    const urlGet = "/api/booking";
-    const urlAdd = "/api/booking/add";
+    const urlGet = "http://guarded-castle-72495.herokuapp.com/api/booking";
+    const urlAdd = "http://guarded-castle-72495.herokuapp.com/api/booking/add";
     var hideThis = document.getElementById("hideThis");
     var form = document.getElementById("form");
 
@@ -542,7 +542,7 @@ conf.style.display = "block";
                       var currentID = clicked.id || "No ID!";
                       var s1 = currentID;
                       var s2 = s1.substr(3);
-                      const urlDelete = "/api/booking/delete/" + s2;
+                      const urlDelete = "http://guarded-castle-72495.herokuapp.com/api/booking/delete/" + s2;
                       fetch(urlDelete, {
                         method: 'DELETE',
                         headers: {
@@ -576,7 +576,7 @@ hide.style.display = "none";
                       var currentID = clicked.id || "No ID!";
                       var s1 = currentID;
                       var s2 = s1.substr(3);
-                      const urlSet = "/api/booking/update/" + s2;
+                      const urlSet = "http://guarded-castle-72495.herokuapp.com/api/booking/update/" + s2;
                       var update = document.getElementById("update");
                     date2.value = element.date;
                     time2.value = element.time;
