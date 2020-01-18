@@ -484,7 +484,10 @@ var newTable = document.getElementById("table2");
 
 
     }
-
+    var confDel = document.getElementById("confDel");
+    confDel.style.display="none";
+    var yes = document.getElementById("yes");
+    var no = document.getElementById("no");
     // DISPLAY "DINA BOKNINGAR"
     var dinaBokningar = document.getElementById("dinaBokningar");
     dinaBokningar.onclick = function () {
@@ -530,18 +533,25 @@ conf.style.display = "block";
                     } }
                     // DELETE BOOKING
 
-                    $('.button3').click(function (event) {      
-                         event.preventDefault(); 
-                      var answer = window.confirm("Är du säker på att du vill avboka?")
-                    if (answer) {
-                   
+                    $('.button3').click(function (event) {   
+                    
                
+                         event.preventDefault(); 
+        
+                         hide.style.display = "none";
+
+                         confDel.style.display="block";
+           
+                   
                       var scrollTo = document.getElementById("scrollTo");
                       bokaBord.style.display ="none";
+                      scrollTo.scrollIntoView();
                       var clicked = event.target;
                       var currentID = clicked.id || "No ID!";
                       var s1 = currentID;
                       var s2 = s1.substr(3);
+                      yes.onclick = function(){
+                        confDel.style.display="none";
                       const urlDelete = "http://guarded-castle-72495.herokuapp.com/api/booking/delete/" + s2;
                       fetch(urlDelete, {
                         method: 'DELETE',
@@ -558,9 +568,10 @@ hide.style.display = "none";
               </div></div>
               `;
              
-                   } else {
-                // Do nothing!
-            }
+                  }
+                  no.onclick=function() {
+                    confDel.style.display = "none";
+                  }
               
                     }) 
                     /* CHANGE BOOKING */           
@@ -741,7 +752,13 @@ bokbord.onclick = function() {
   render() {
     return (
       <div id="bokaBord">
+          <div id="confDel">
+              <h2>Är du säker på att du vill avboka?</h2>
+              <div id="yes" className="btn">Ja</div>
+              <div id="no" className="btn">Nej</div>
+            </div>
           <div id="bokaBord2">
+          
         <h2 id="hideThis">Boka bord</h2>
         <div id="bookings" data-aos="fade-right">
           <form id="form">

@@ -674,11 +674,13 @@ text-align: center;
     transition: ease-in-out 1s;
   
 }
+
 @include small {
 
   margin-left: 20%;
 }
 }
+
 #bokno {
   text-align: center;
 }
@@ -751,5 +753,31 @@ i {
   margin: 0 auto;
   text-align: center;
   font-size: 0.8em;
+}
+}
+#confDel {
+
+}
+
+.btn {
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  padding: 2px 0 2px 0;
+  font-size: 1.3em;
+text-align: center;
+  width: 200px;
+margin: 20px auto;
+  border: none;
+  outline: none;
+  color: white;
+  transition: ease-in-out 1s;
+  background-image: linear-gradient(color(accent), color(golden));
+  &:hover {
+    background-image: linear-gradient(color(golden), color(golden-dark));
+    transition: ease-in-out 1s;
+  
+}
+@include small() {
+  margin: 20px 40%; 
 }
 }

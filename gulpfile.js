@@ -1,24 +1,18 @@
 const { src, dest, series, parallel } = require("gulp");
-const uglify = require('gulp-uglify-es').default;
 const watch = require('gulp-watch');
-const imagemin = require('gulp-imagemin');
 
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
-const sourcemaps = require('gulp-sourcemaps');
-
-
-const babel = require("gulp-babel");
 const concat = require("gulp-concat");
 
 // PATHS
 const files = {
   // htmlPath: "src/**/*.html",
-    jsPath: "src/Assets/*.js",
-    SCSS_SRC: "src/Assets/**/*.scss",
-   cssPath: "src/Assets/scss/main.css",
-   SCSS_DEST:  "src/Assets/",
-    imgPath: "src/Assets/images/**"
+    jsPath: "project/src/Assets/*.js",
+    SCSS_SRC: "project/src/Assets/**/*.scss",
+   cssPath: "project/src/Assets/scss/main.css",
+   SCSS_DEST:  "project/src/Assets/",
+    imgPath: "project/src/Assets/images/**"
 };
 /*
 function jsTask() {
