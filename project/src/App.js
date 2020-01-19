@@ -1,6 +1,5 @@
 import React from 'react';
 import './Assets/scss/main.css';
-import './Assets/js/main';
 import Header from './Assets/Components/headerComponent/header';
 import Video from './Assets/Components/headerComponent/video';
 import FirstSection from './Assets/Components/frontPageComponent/firstSection';

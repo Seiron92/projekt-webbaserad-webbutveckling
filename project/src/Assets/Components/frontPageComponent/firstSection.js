@@ -1,8 +1,6 @@
 import React from 'react';
-import $ from 'jquery';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 
 function FirstSection() {
   return (
@@ -13,7 +11,6 @@ function FirstSection() {
     </div>
   );
 }
-
 
 class FirstSectionElement extends React.Component {
     constructor(props) {
@@ -26,8 +23,7 @@ class FirstSectionElement extends React.Component {
     }
 
     render() {
-      return (
-       
+      return ( 
      <div id="about">
        <div className="firstSection">
        <img data-aos="fade-right" id="mat" src={require('../../images/kitchenGold.png')}  alt="sallad"/>

@@ -12,14 +12,8 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
 
-
-
 // CONNECT TO DB VIA HEROKU
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true } );
-
-// ON LOCAL HOST 
-//mongoose.connect("mongodb+srv://rebecca:sockersweet92@cluster0-knlvj.azure.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true } );
-
 
 const Bookings = require("./app/models/bookingService.js");
 // NEW INSTANCE OF EXPRESS 
@@ -32,9 +26,6 @@ app.all('/*', function (req, res, next){
     res.header("Access-Control-Allow-Methods", "GET, PUT, PATCH, POST, DELETE");
     next();
 });
-
-
-
 
 
 // BODY PARSER
